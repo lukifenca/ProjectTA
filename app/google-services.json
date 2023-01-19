@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "914633484666",
+    "project_id": "projectta-2cced",
+    "storage_bucket": "projectta-2cced.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:914633484666:android:661affa37064d431320ec3",
+        "android_client_info": {
+          "package_name": "com.lukitor.projectta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "914633484666-mm473ff9ge61s1ornpu51nsc3s028qr1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6JK_04sdlyx49RssUuv3BrZ-LFrWvGQg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "914633484666-mm473ff9ge61s1ornpu51nsc3s028qr1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
