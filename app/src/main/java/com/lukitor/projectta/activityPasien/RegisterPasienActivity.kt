@@ -15,6 +15,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.lukitor.projectta.MainActivity
 import com.lukitor.projectta.Model.Pasien
+import com.lukitor.projectta.R
 import com.lukitor.projectta.databinding.ActivityRegisterPasienBinding
 import java.util.*
 
@@ -45,6 +46,7 @@ class RegisterPasienActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLi
 
         binding.imageView3.setOnClickListener {
             finish()
+            overridePendingTransition(R.transition.nothing, R.transition.bottom_down)
         }
         binding.btnRegister.setOnClickListener {
             val email = binding.etEmail.text.toString().trim()
@@ -57,10 +59,10 @@ class RegisterPasienActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLi
             val telp = binding.etTelp.text.toString().trim()
             var kelamin = ""
             if(binding.rbPasienPria.isChecked){
-                kelamin = binding.rbPasienPria.toString().trim()
+                kelamin = "Pria"
             }
             else if(binding.rbPasienWanita.isChecked){
-                kelamin = binding.rbPasienWanita.toString().trim()
+                kelamin = "Wanita"
             }
 
             if (email.isEmpty()) {
@@ -116,7 +118,7 @@ class RegisterPasienActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLi
                 binding.etTelp.requestFocus()
                 return@setOnClickListener
             }
-            registerUser(email,password,nama,tb,bb, kelamin,telp)
+            registerUser(email,password,nama,tb,bb, kelamin,date)
         }
     }
 
@@ -131,6 +133,7 @@ class RegisterPasienActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLi
                 saveUser(email,nama,tinggibadan,beratbadan,jeniskelamin,tanggallahir,progressDialog)
                 auth.signOut()
             } else {
+                progressDialog.dismiss()
                 Toast.makeText(this, it.exception?.message, Toast.LENGTH_SHORT).show()
             }
         }
@@ -140,7 +143,7 @@ class RegisterPasienActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLi
         val currentUserId = auth.currentUser!!.uid
         firebaseUser = auth.currentUser!!
         ref = FirebaseDatabase.getInstance().getReference("PASIEN")
-        val data = Pasien(currentUserId,email,nama,tinggibadan,beratbadan,jeniskelamin,tanggallahir,"Pasien",0)
+        val data = Pasien(currentUserId,email,nama,tinggibadan,beratbadan,jeniskelamin,tanggallahir,"Pasien")
         if (data!=null){
             ref.child(currentUserId).setValue(data).addOnCompleteListener {
                 if (it.isSuccessful) {
@@ -156,10 +159,8 @@ class RegisterPasienActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLi
                         }
                     }
                     auth.signOut()
-                    Intent(this, MainActivity::class.java).also {
-                        it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                        startActivity(it)
-                    }
+                    finish()
+                    overridePendingTransition(R.transition.nothing, R.transition.bottom_down)
                 }
                 else{
                     progressDialog.dismiss()

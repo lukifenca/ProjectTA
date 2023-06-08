@@ -11,12 +11,17 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.lukitor.projectta.Model.Admin
+import com.lukitor.projectta.Model.Dokter
 import com.lukitor.projectta.Model.Pasien
+import com.lukitor.projectta.activityAdmin.HomeAdminActivity
+import com.lukitor.projectta.activityAdmin.MasterPenyakitActivity
 import com.lukitor.projectta.activityDokter.HomeDokterActivity
+import com.lukitor.projectta.activityDokter.KonsultasiOnline.AntrianKonsultasiActivity
+import com.lukitor.projectta.activityDokter.KonsultasiOnline.ChatDokterActivity
+import com.lukitor.projectta.activityDokter.ProfileDokterActivity
 import com.lukitor.projectta.activityDokter.RegisterDokterActivity
-import com.lukitor.projectta.activityPasien.HomePasienActivity
-import com.lukitor.projectta.activityPasien.ProfilePasienActivity
-import com.lukitor.projectta.activityPasien.RegisterPasienActivity
+import com.lukitor.projectta.activityPasien.*
 import com.lukitor.projectta.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -27,18 +32,18 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         auth = FirebaseAuth.getInstance()
-
         binding.btnRegisterPasien.setOnClickListener {
             Intent(this,RegisterPasienActivity::class.java).also{
                 startActivity(it)
+                overridePendingTransition(R.transition.bottom_up, R.transition.nothing);
             }
         }
 
         binding.btnRegisterDokter.setOnClickListener {
             Intent(this,RegisterDokterActivity::class.java).also{
                 startActivity(it)
+                overridePendingTransition(R.transition.bottom_up, R.transition.nothing);
             }
 
         }
@@ -46,6 +51,7 @@ class MainActivity : AppCompatActivity() {
         binding.btnReset.setOnClickListener {
             Intent(this,ResetPasswordActivity::class.java).also{
                 startActivity(it)
+                overridePendingTransition(R.transition.bottom_up, R.transition.nothing);
             }
         }
 
@@ -102,6 +108,28 @@ class MainActivity : AppCompatActivity() {
                 TODO("Not yet implemented")
             }
         })
+        FirebaseDatabase.getInstance().getReference("DOKTER").child(auth.currentUser!!.uid).addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if(snapshot.exists()){
+                    val user =snapshot.getValue<Dokter>(Dokter::class.java)
+                    role = user!!.role.toString().trim()
+                }
+            }
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
+        FirebaseDatabase.getInstance().getReference("ADMIN").child(auth.currentUser!!.uid).addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if(snapshot.exists()){
+                    val user =snapshot.getValue<Admin>(Admin::class.java)
+                    role = user!!.role.toString().trim()
+                }
+            }
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
         val timer = object: CountDownTimer(5000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 if (role != ""){
@@ -118,22 +146,26 @@ class MainActivity : AppCompatActivity() {
 
     private fun changeact(role:String){
         if (role == "Pasien"){
-            Intent(this,ProfilePasienActivity::class.java).also{ intent->
+            Intent(this,HomePasienActivity::class.java).also{ intent->
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
-                finish()
+                overridePendingTransition(R.transition.bottom_up, R.transition.nothing);
             }
         }
         else if(role == "Dokter"){
-            Intent(this,HomeDokterActivity::class.java).also{ intent->
+            Intent(this,ProfileDokterActivity::class.java).also{ intent->
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
-                finish()
+                overridePendingTransition(R.transition.bottom_up, R.transition.nothing);
             }
 
         }
-        else{
-
+        else if (role == "MasterAdmin" || role == "Admin"){
+            Intent(this,HomeAdminActivity::class.java).also{ intent->
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+                overridePendingTransition(R.transition.bottom_up, R.transition.nothing);
+            }
         }
     }
 }

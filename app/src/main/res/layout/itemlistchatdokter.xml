@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cvlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txtMsgPasien"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-10dp"
+            android:layout_weight="1"
+            android:background="?android:attr/fastScrollPreviewBackgroundLeft"
+            android:backgroundTint="#97F2F1"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="Test123"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/txtWaktuMsgPasien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:layout_weight="1"
+            android:text="09:00"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/txtWaktuMsgDokter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:layout_weight="1"
+            android:text="10:00"
+            android:textAlignment="viewEnd"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/txtMsgDokter"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="-10dp"
+            android:layout_weight="1"
+            android:background="?android:attr/fastScrollPreviewBackgroundRight"
+            android:backgroundTint="#D8D6D6"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="Test 123"
+            android:textAlignment="viewEnd"
+            android:textColor="#000000" />
+    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>

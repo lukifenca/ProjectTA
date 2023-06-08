@@ -1,12 +1,17 @@
 package com.lukitor.projectta.activityPasien
 
 import android.app.DatePickerDialog
+import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.view.View
+import android.view.WindowManager
 import android.widget.DatePicker
 import android.widget.RadioButton
 import android.widget.Toast
+import com.ceylonlabs.imageviewpopup.ImagePopup
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
@@ -14,9 +19,14 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.lukitor.projectta.MainActivity
+import com.lukitor.projectta.Model.HistoryTransaksi
 import com.lukitor.projectta.Model.Pasien
+import com.lukitor.projectta.R
 import com.lukitor.projectta.VerifActivity
+import com.lukitor.projectta.activityAdmin.GantiEmailAdminActivity
+import com.lukitor.projectta.activityAdmin.GantiPasswordAdminActivity
 import com.lukitor.projectta.databinding.ActivityDetailProfilePasienBinding
+import java.text.SimpleDateFormat
 import java.util.*
 
 class DetailProfilePasienActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
@@ -34,18 +44,10 @@ class DetailProfilePasienActivity : AppCompatActivity(), DatePickerDialog.OnDate
         super.onCreate(savedInstanceState)
         binding= ActivityDetailProfilePasienBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.rdgRegisPasien.setOnCheckedChangeListener { radioGroup, i ->
-        }
         auth = FirebaseAuth.getInstance()
-        firebaseUser = auth.currentUser!!
-        if (firebaseUser != null){
-            if (!firebaseUser.isEmailVerified){
-                Intent(this, VerifActivity::class.java).also {
-                    it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                    startActivity(it)
-                    finish()
-                }
-            }
+        if (auth.currentUser != null){
+            firebaseUser = auth.currentUser!!
+            Loading()
             userInfo()
             binding.btnPasienDate4.setOnClickListener {
                 getDateCalendar()
@@ -57,8 +59,14 @@ class DetailProfilePasienActivity : AppCompatActivity(), DatePickerDialog.OnDate
                 var tempbb = binding.etBB.text.toString().trim()
                 val date = binding.etPasienTanggal4.text.toString().trim()
                 val selectedid = binding.rdgRegisPasien.checkedRadioButtonId
+                var kelamin = ""
                 val rb : RadioButton = findViewById(selectedid)
-                val kelamin = rb.text.toString().trim()
+                if(binding.rbPasienPria.isChecked){
+                    kelamin = "Pria"
+                }
+                else if(binding.rbPasienWanita.isChecked){
+                kelamin = "Wanita"
+            }
                 if (nama.isEmpty()) {
                     binding.etNama.error = "Nama Harus Di Isi"
                     binding.etNama.requestFocus()
@@ -90,16 +98,27 @@ class DetailProfilePasienActivity : AppCompatActivity(), DatePickerDialog.OnDate
                 updatData(nama,tb,bb,date,kelamin)
                 Toast.makeText(this, "Perubahan data telah berhasil!", Toast.LENGTH_SHORT).show()
                 finish()
+                overridePendingTransition(R.transition.nothing, R.transition.bottom_down)
+            }
+            binding.btnChangeEmail.setOnClickListener{
+                Intent(this, GantiEmailPasienActivity::class.java).also {
+                    startActivity(it)
+                    overridePendingTransition(R.transition.bottom_up, R.transition.nothing);
+                }
+            }
+            binding.btnChangePW.setOnClickListener {
+                Intent(this, GantiPasswordPasienActivity::class.java).also {
+                    startActivity(it)
+                    overridePendingTransition(R.transition.bottom_up, R.transition.nothing);
+                }
             }
             binding.btnBack.setOnClickListener {
                 finish()
+                overridePendingTransition(R.transition.nothing, R.transition.bottom_down)
             }
         }
         else{
-            auth.signOut()
-            Intent(this, MainActivity::class.java).also {
-                startActivity(it)
-            }
+            signout()
         }
     }
     private fun userInfo(){
@@ -111,10 +130,12 @@ class DetailProfilePasienActivity : AppCompatActivity(), DatePickerDialog.OnDate
                     if (user!!.jeniskelamin.toString() =="Pria"){
                         binding.rbPasienPria.isChecked = true
                         binding.rbPasienWanita.isChecked = false
+                        binding.imageprofiledokter2.setImageResource(R.drawable.ic_man);
                     }
                     else{
                         binding.rbPasienPria.isChecked = false
                         binding.rbPasienWanita.isChecked = true
+                        binding.imageprofiledokter2.setImageResource(R.drawable.ic_woman);
                     }
 
                     binding.apply {
@@ -158,6 +179,7 @@ class DetailProfilePasienActivity : AppCompatActivity(), DatePickerDialog.OnDate
             binding.etPasienTanggal4.setText("$savedday-$savedmonth-$savedyear")
         }
     }
+
     private fun updatData(nama:String, tb:Int, bb:Int, tanggal:String,jk:String){
         val ref = FirebaseDatabase.getInstance().getReference("PASIEN").child(firebaseUser.uid)
         ref.addValueEventListener(object : ValueEventListener{
@@ -174,5 +196,29 @@ class DetailProfilePasienActivity : AppCompatActivity(), DatePickerDialog.OnDate
                 TODO("Not yet implemented")
             }
         })
+    }
+
+    private fun signout(){
+        auth.signOut()
+        Intent(this, MainActivity::class.java).also {
+            startActivity(it)
+            overridePendingTransition(R.transition.nothing, R.transition.bottom_down)
+        }
+    }
+    private fun Loading() {
+        binding.mainLayout.visibility = View.GONE
+        val progressDialog = ProgressDialog(this)
+        progressDialog.setMessage("Loading...")
+        progressDialog.setCancelable(false)
+        progressDialog.show()
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+            WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE
+        )
+        Handler().postDelayed({
+            progressDialog.dismiss()
+            window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+            binding.mainLayout.visibility = View.VISIBLE
+        }, 2000)
     }
 }

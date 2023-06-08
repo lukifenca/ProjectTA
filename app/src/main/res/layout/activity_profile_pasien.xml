@@ -10,6 +10,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,8 +37,8 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="2dp"
                     android:layout_weight="0"
-                    app:tint="#000000"
-                    app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+                    app:srcCompat="@drawable/ic_baseline_arrow_back_24"
+                    app:tint="#000000" />
 
                 <TextView
                     android:id="@+id/textView10"
@@ -48,6 +49,14 @@
                     android:text="Profile"
                     android:textColor="#000000"
                     android:textSize="22sp" />
+
+
+                <ImageView
+                    android:id="@+id/imageView21"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/ictestlogo" />
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -67,7 +76,7 @@
                     android:id="@+id/linearLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:orientation="horizontal"
+                    android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -79,8 +88,8 @@
                         android:layout_marginLeft="10dp"
                         android:layout_weight="0"
                         android:paddingTop="5dp"
-                        app:tint="#1FC8C6"
-                        app:srcCompat="@drawable/ic_baseline_person_24" />
+                        app:srcCompat="@drawable/ic_baseline_person_24"
+                        app:tint="#1FC8C6" />
 
                     <TextView
                         android:id="@+id/tv_profilenamapasien"
@@ -101,8 +110,8 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="0"
-                        app:tint="#1FC8C6"
-                        app:srcCompat="@drawable/ic_baseline_mode_edit_24" />
+                        app:srcCompat="@drawable/ic_baseline_mode_edit_24"
+                        app:tint="#1FC8C6" />
 
                 </LinearLayout>
 
@@ -121,24 +130,24 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:tint="#1FC8C6"
-                        app:srcCompat="@drawable/ic_baseline_date_range_24" />
+                        app:srcCompat="@drawable/ic_baseline_date_range_24"
+                        app:tint="#1FC8C6" />
 
                     <ImageView
                         android:id="@+id/imageView5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:tint="#1FC8C6"
-                        app:srcCompat="@drawable/ic_baseline_monitor_weight_24" />
+                        app:srcCompat="@drawable/ic_baseline_monitor_weight_24"
+                        app:tint="#1FC8C6" />
 
                     <ImageView
                         android:id="@+id/imageView6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:tint="#1FC8C6"
-                        app:srcCompat="@drawable/ic_baseline_height_24" />
+                        app:srcCompat="@drawable/ic_baseline_height_24"
+                        app:tint="#1FC8C6" />
 
                 </LinearLayout>
 
@@ -208,8 +217,8 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="5dp"
                         android:layout_weight="0"
-                        app:tint="#1FC8C6"
-                        app:srcCompat="@drawable/ic_baseline_history_24" />
+                        app:srcCompat="@drawable/ic_baseline_history_24"
+                        app:tint="#1FC8C6" />
 
                     <TextView
                         android:id="@+id/textView7"
@@ -227,8 +236,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="0"
-                        app:tint="#1FC8C6"
-                        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
+                        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+                        app:tint="#1FC8C6" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -256,8 +265,8 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="5dp"
                         android:layout_weight="0"
-                        app:tint="#1FC8C6"
-                        app:srcCompat="@drawable/ic_baseline_wifi_protected_setup_24" />
+                        app:srcCompat="@drawable/ic_baseline_wifi_protected_setup_24"
+                        app:tint="#1FC8C6" />
 
                     <TextView
                         android:id="@+id/textView8"
@@ -275,8 +284,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="0"
-                        app:tint="#1FC8C6"
-                        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
+                        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+                        app:tint="#1FC8C6" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -304,8 +313,8 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="5dp"
                         android:layout_weight="0"
-                        app:tint="#1FC8C6"
-                        app:srcCompat="@drawable/ic_baseline_password_24" />
+                        app:srcCompat="@drawable/ic_baseline_password_24"
+                        app:tint="#1FC8C6" />
 
                     <TextView
                         android:id="@+id/textView11"
@@ -323,8 +332,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="0"
-                        app:tint="#1FC8C6"
-                        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
+                        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+                        app:tint="#1FC8C6" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -352,8 +361,8 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="5dp"
                         android:layout_weight="0"
-                        app:tint="#1FC8C6"
-                        app:srcCompat="@drawable/ic_baseline_email_24" />
+                        app:srcCompat="@drawable/ic_baseline_email_24"
+                        app:tint="#1FC8C6" />
 
                     <TextView
                         android:id="@+id/textView12"
@@ -371,8 +380,57 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="0"
-                        app:tint="#1FC8C6"
-                        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
+                        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+                        app:tint="#1FC8C6" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/pasienKonsultasiOnline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/layout_bg"
+                android:elevation="25dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imageView132"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="0"
+                        app:srcCompat="@drawable/ic_baseline_document_scanner_24"
+                        app:tint="#1FC8C6" />
+
+                    <TextView
+                        android:id="@+id/textView122"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="2"
+                        android:text="Konsultasi Online"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:id="@+id/imageView142"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0"
+                        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+                        app:tint="#1FC8C6" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>

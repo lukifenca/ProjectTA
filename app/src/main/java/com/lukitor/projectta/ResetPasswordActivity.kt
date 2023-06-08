@@ -16,6 +16,7 @@ class ResetPasswordActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.btnBackResetPw.setOnClickListener {
             finish()
+            overridePendingTransition(R.transition.nothing, R.transition.bottom_down)
             Toast.makeText(this, "Reset password dibatalkan!", Toast.LENGTH_SHORT).show()
         }
         binding.btnResetPassword.setOnClickListener {
@@ -33,10 +34,8 @@ class ResetPasswordActivity : AppCompatActivity() {
             FirebaseAuth.getInstance().sendPasswordResetEmail(email).addOnCompleteListener {
                 if (it.isSuccessful){
                     Toast.makeText(this,"Cek email untuk reset password", Toast.LENGTH_SHORT).show()
-                    Intent(this, MainActivity::class.java).also {
-                        it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                        startActivity(it)
-                    }
+                    finish()
+                    overridePendingTransition(R.transition.nothing, R.transition.bottom_down)
                 }
                 else{
                     Toast.makeText(this,it.exception?.message, Toast.LENGTH_SHORT).show()

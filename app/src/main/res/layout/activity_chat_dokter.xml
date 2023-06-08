@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#97F2F1"
+    tools:context=".activityDokter.KonsultasiOnline.ChatDokterActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#97F2F1"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgbackprofiledokter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="3dp"
+            android:layout_weight="0"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
+        <TextView
+            android:id="@+id/txtNamaPasien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:text="Nama Pasien"
+            android:textColor="#000000"
+            android:textSize="22sp" />
+
+        <ImageView
+            android:id="@+id/txtJenisPenyakit"
+            android:layout_width="48dp"
+            android:layout_height="34dp"
+            android:layout_marginTop="-2dp"
+            android:layout_weight="0"
+            app:srcCompat="@drawable/ictestlogo" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/corner_top_noborder"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                app:srcCompat="@drawable/baseline_close_24" />
+
+            <ImageView
+                android:id="@+id/imgpenyakitpasien"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                app:srcCompat="@drawable/ictestlogo" />
+
+            <TextView
+                android:id="@+id/txtjenispenyakitpasien"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Penyakit Terdeteksi : Jerawat"
+                android:textAlignment="textStart"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/txtGenderPasien"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pria"
+                android:textAlignment="textStart"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/txtUsiapasien"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="20 Tahun"
+                android:textAlignment="textStart"
+                android:textColor="#000000" />
+
+            <ListView
+                android:id="@+id/rv_historyChat"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="#ffffff"
+                android:dividerHeight="15.0sp"
+                android:footerDividersEnabled="false"
+                android:headerDividersEnabled="true"
+                tools:listitem="@layout/itemlistchatdokter" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        app:flow_verticalAlign="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/enterMsg"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:background="@android:drawable/editbox_background"
+            android:backgroundTint="#CBCBCB"
+            android:drawableBottom="@drawable/imageborder"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Ketik Pesan Anda Disini"
+            android:inputType="textMultiLine" />
+
+        <ImageView
+            android:id="@+id/imgsendmsg"
+            android:layout_width="59dp"
+            android:layout_height="53dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/baseline_send_24" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

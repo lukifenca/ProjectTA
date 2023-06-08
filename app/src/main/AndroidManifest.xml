@@ -9,14 +9,105 @@
         android:required="true" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <meta-data
+        android:name="com.midtrans.ClientKey"
+        android:value="SB-Mid-client-aJzv5XCgy6JobNa6" />
+    <meta-data
+        android:name="com.midtrans.ServerKey"
+        android:value="SB-Mid-server-gluxBxY-uVxizDzkxad_5JCX" />
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectTA">
+        <activity
+            android:name=".activityPasien.Reports.PasienDetailReportsKonsultasi"
+            android:exported="false" />
+        <activity
+            android:name=".activityPasien.Reports.PasienReportsKonsultasi"
+            android:exported="false" />
+        <activity
+            android:name=".activityPasien.Reports.PasienReportsSubsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activityPasien.ListSubsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activityPasien.DetailBeritaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activityPasien.ListBeritaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activityAdmin.TambahBeritaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activityAdmin.MasterSubsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activityAdmin.MasterObatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activityAdmin.MasterPenyakitActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activityAdmin.GantiPasswordAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activityAdmin.GantiEmailAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activityAdmin.DetailProfileAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activityAdmin.MasterPasienActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activityAdmin.ListAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activityAdmin.RegisterAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activityAdmin.HomeAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activityPasien.ScanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activityPasien.ChatPasienActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activityDokter.KonsultasiOnline.ChatDokterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activityDokter.KonsultasiOnline.AntrianKonsultasiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activityPasien.ScanKulitActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activityPasien.PembayaranKonsultasiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activityPasien.KonsultasiOnlineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activityDokter.HistorySaldoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activityDokter.TarikSaldoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activityDokter.DetailProfileDokter"
+            android:exported="false" />
         <activity
             android:name=".activityDokter.GantiPasswordDokterActivity"
             android:exported="false" />
@@ -68,6 +159,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="-5dp"
     tools:context=".activityDokter.ProfileDokterActivity">
 
     <ScrollView
         android:id="@+id/scrollView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +26,6 @@
                 android:id="@+id/linearLayout4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
                 android:background="#97F2F1"
                 android:orientation="horizontal"
                 android:paddingLeft="5dp"
@@ -49,6 +50,13 @@
                     android:text="Profile"
                     android:textColor="#000000"
                     android:textSize="22sp" />
+
+                <ImageView
+                    android:id="@+id/imageView21"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/ictestlogo" />
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -64,7 +72,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
                         android:id="@+id/imageView23"
@@ -72,8 +83,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="0"
                         android:scaleType="center"
-                        app:tint="#1FC8C6"
-                        app:srcCompat="@drawable/ic_baseline_account_balance_wallet_24" />
+                        app:srcCompat="@drawable/ic_baseline_account_balance_wallet_24"
+                        app:tint="#1FC8C6" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -141,8 +152,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="0"
                         android:scaleType="center"
-                        app:tint="#1FC8C6"
-                        app:srcCompat="@drawable/ic_baseline_request_quote_24" />
+                        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+                        app:tint="#1FC8C6" />
 
                 </LinearLayout>
 
@@ -172,8 +183,8 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="5dp"
                         android:layout_weight="0"
-                        app:tint='#1FC8C6'
-                        app:srcCompat="@drawable/ic_baseline_person_24" />
+                        app:srcCompat="@drawable/ic_baseline_person_24"
+                        app:tint='#1FC8C6' />
 
                     <TextView
                         android:id="@+id/textView8"
@@ -182,7 +193,7 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="8dp"
                         android:layout_weight="2"
-                        android:text="Ganti Profile"
+                        android:text="Detail Profile"
                         android:textColor="#000000"
                         android:textSize="18sp" />
 
@@ -191,8 +202,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="0"
-                        app:tint="#1FC8C6"
-                        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
+                        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+                        app:tint="#1FC8C6" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -221,8 +232,8 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="5dp"
                         android:layout_weight="0"
-                        app:tint="#1FC8C6"
-                        app:srcCompat="@drawable/ic_baseline_email_24" />
+                        app:srcCompat="@drawable/ic_baseline_email_24"
+                        app:tint="#1FC8C6" />
 
                     <TextView
                         android:id="@+id/textView12"
@@ -240,8 +251,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="0"
-                        app:tint="#1FC8C6"
-                        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
+                        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+                        app:tint="#1FC8C6" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -270,8 +281,8 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="5dp"
                         android:layout_weight="0"
-                        app:tint="#1FC8C6"
-                        app:srcCompat="@drawable/ic_baseline_password_24" />
+                        app:srcCompat="@drawable/ic_baseline_password_24"
+                        app:tint="#1FC8C6" />
 
                     <TextView
                         android:id="@+id/textView11"
@@ -289,13 +300,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="0"
-                        app:tint="#1FC8C6"
-                        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
+                        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+                        app:tint="#1FC8C6" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/dokterstrterdaftar"
+                android:id="@+id/btnHSaldo"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginStart="10dp"
@@ -307,47 +318,46 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
                     android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toBottomOf="parent">
 
                     <ImageView
-                        android:id="@+id/imageView21"
+                        android:id="@+id/imageView111"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="5dp"
                         android:layout_weight="0"
-                        app:tint="#1FC8C6"
-                        app:srcCompat="@drawable/ic_baseline_document_scanner_24" />
+                        app:srcCompat="@drawable/ic_baseline_request_quote_24"
+                        app:tint="#1FC8C6" />
 
                     <TextView
-                        android:id="@+id/textView22"
+                        android:id="@+id/textView111"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="5dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_weight="1"
-                        android:text="STR Terdaftar"
+                        android:layout_marginTop="4dp"
+                        android:layout_weight="2"
+                        android:text="Riwayat Saldo"
                         android:textColor="#000000"
                         android:textSize="18sp" />
 
                     <ImageView
-                        android:id="@+id/imageView22"
+                        android:id="@+id/imageView121"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="0"
-                        app:tint="#1FC8C6"
-                        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
-
+                        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+                        app:tint="#1FC8C6" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/doktersipterdaftar"
+                android:id="@+id/dokterKonsultasiOnline"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="10dp"
@@ -359,38 +369,37 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/imageView20"
+                        android:id="@+id/imageView132"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="5dp"
                         android:layout_weight="0"
-                        app:tint="#1FC8C6"
-                        app:srcCompat="@drawable/ic_baseline_document_scanner_24" />
+                        app:srcCompat="@drawable/ic_baseline_document_scanner_24"
+                        app:tint="#1FC8C6" />
 
                     <TextView
-                        android:id="@+id/textView21"
+                        android:id="@+id/textView122"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="5dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_weight="1"
-                        android:text="SIP Terdaftar"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="2"
+                        android:text="Konsultasi Online"
                         android:textColor="#000000"
                         android:textSize="18sp" />
 
                     <ImageView
-                        android:id="@+id/imageView15"
+                        android:id="@+id/imageView142"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="0"
-                        app:tint="#1FC8C6"
-                        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
-
+                        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+                        app:tint="#1FC8C6" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 

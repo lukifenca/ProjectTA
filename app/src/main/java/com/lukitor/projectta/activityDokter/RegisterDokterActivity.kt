@@ -46,12 +46,11 @@ class RegisterDokterActivity : AppCompatActivity() {
             val tarif = binding.etTarif.text.toString().trim()
             var kelamin = ""
             if(binding.rbDokterPria.isChecked){
-                kelamin = binding.rbDokterWanita.toString().trim()
+                kelamin = "Pria"
             }
             else if(binding.rbDokterWanita.isChecked){
-                kelamin = binding.rbDokterWanita.toString().trim()
+                kelamin = "Wanita"
             }
-
             if (email.isEmpty()) {
                 binding.etEmail.error = "Email harus disi"
                 binding.etEmail.requestFocus()
@@ -113,8 +112,8 @@ class RegisterDokterActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             if (tarif.toInt() < 25000) {
-                binding.etAN.error = "Tarif Konsultasi Harus Lebih Dari Rp.25000"
-                binding.etAN.requestFocus()
+                binding.etTarif.error = "Tarif Konsultasi Harus Lebih Dari Rp.25000"
+                binding.etTarif.requestFocus()
                 return@setOnClickListener
             }
 
@@ -124,11 +123,16 @@ class RegisterDokterActivity : AppCompatActivity() {
             dataDokter1["nama"] = nama
             dataDokter1["telp"] = telp
             dataDokter1["kelamin"] = kelamin
+            dataDokter1["tarif"] = tarif
+            dataDokter1["namabank"] = namabank
+            dataDokter1["norek"] = norek
+            dataDokter1["an"] = an
             var intent = Intent(this,RegisterDokter2Activity::class.java)
             intent.putExtra("datadokter1",dataDokter1)
             intent.putExtra("datadokter2",dataDokter2)
 
             startActivity(intent)
+            finish()
         }
         binding.fabBack.setOnClickListener { finish() }
     }

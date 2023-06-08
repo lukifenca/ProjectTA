@@ -52,6 +52,7 @@ class VerifActivity : AppCompatActivity() {
             Intent(this, MainActivity::class.java).also {
                 it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(it)
+                overridePendingTransition(R.transition.bottom_up, R.transition.nothing);
             }
         }
     }
@@ -60,7 +61,7 @@ class VerifActivity : AppCompatActivity() {
         Intent(this, MainActivity::class.java).also {
             it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(it)
-            finish()
+            overridePendingTransition(R.transition.bottom_up, R.transition.nothing);
         }
     }
 }

@@ -9,7 +9,6 @@ data class Pasien(
     var jeniskelamin : String?,
     var tanggallahir: String?,
     var role: String?,
-    var jumlahvoucher: Int?
 ) {
-    constructor():this("","","",0,0,"","","",0)
+    constructor():this("","","",0,0,"","","")
 }

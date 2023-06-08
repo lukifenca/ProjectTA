@@ -6,4 +6,434 @@
     android:layout_height="match_parent"
     tools:context=".activityPasien.HomePasienActivity">
 
+    <ScrollView
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="#ECEBEB"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imgLogout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="28dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/baseline_logout_24" />
+
+                    <TextView
+                        android:id="@+id/txtNamaHalo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/andika"
+                        android:text="Halo, Nama"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txtLogout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="2dp"
+                        android:fontFamily="@font/andika"
+                        android:text="Logout"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@+id/imgLogout"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout4"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="-90dp"
+                    android:background="@drawable/corner_top_noborder"
+                    android:backgroundTint="#97F2F1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout5" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="-100dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/corner_image"
+                    android:backgroundTint="#FFFFFF"
+                    app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+
+                    <TextView
+                        android:id="@+id/txtDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/andika"
+                        android:text="Detail"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout18"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/imageprofiledokter"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_profilenamapasien">
+
+                        <ImageView
+                            android:id="@+id/imageView18"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="2dp"
+                            app:srcCompat="@drawable/ic_calendar" />
+
+                        <TextView
+                            android:id="@+id/tv_profileusiapasien"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:fontFamily="@font/andika"
+                            android:text="20 Tahun"
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout19"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/imageprofiledokter"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout18">
+
+                        <ImageView
+                            android:id="@+id/imageView22"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="2dp"
+                            app:srcCompat="@drawable/measurement" />
+
+                        <TextView
+                            android:id="@+id/tv_profilebbpasien"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:fontFamily="@font/andika"
+                            android:text="80 Kg"
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout17"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/imageprofiledokter"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout19">
+
+                        <ImageView
+                            android:id="@+id/imageView25"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="2dp"
+                            app:srcCompat="@drawable/height_2_blue" />
+
+                        <TextView
+                            android:id="@+id/tv_profiletbpasien"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:fontFamily="@font/andika"
+                            android:text="180 Cm"
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:id="@+id/imageprofiledokter"
+                        android:layout_width="150dp"
+                        android:layout_height="180dp"
+                        android:src="@drawable/ic_man"
+                        app:civ_border_color="#1fc8c6"
+                        app:civ_shadow="true"
+                        app:civ_shadow_color="#3f51b5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_arrow_right" />
+
+                    <TextView
+                        android:id="@+id/tv_profilenamapasien"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/andika"
+                        android:text="Nama"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toEndOf="@+id/imageprofiledokter"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="-80dp"
+                    android:background="@drawable/corner_top_noborder_moreradius"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/layoutBerita"
+                                android:layout_width="match_parent"
+                                android:layout_height="150dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/layout_bg"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/imageView281"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="120dp"
+                                    android:paddingTop="20dp"
+                                    android:paddingBottom="10dp"
+                                    app:srcCompat="@drawable/news" />
+
+                                <TextView
+                                    android:id="@+id/textView381"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/andika"
+                                    android:text="Berita"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/layoutSubs"
+                                android:layout_width="match_parent"
+                                android:layout_height="150dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/layout_bg"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/imageView272"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="120dp"
+                                    android:paddingTop="10dp"
+                                    android:paddingBottom="10dp"
+                                    app:srcCompat="@drawable/subscribe" />
+
+                                <TextView
+                                    android:id="@+id/textView372"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/andika"
+                                    android:text="Subscription"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/layoutScan"
+                                android:layout_width="match_parent"
+                                android:layout_height="150dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/layout_bg"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/imageView283"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="120dp"
+                                    android:paddingTop="20dp"
+                                    android:paddingBottom="10dp"
+                                    app:srcCompat="@drawable/medical__4_" />
+
+                                <TextView
+                                    android:id="@+id/textView383"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/andika"
+                                    android:text="Scan Kulit"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/layoutKonsul"
+                                android:layout_width="match_parent"
+                                android:layout_height="150dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/layout_bg"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/imageView274"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="120dp"
+                                    android:paddingTop="10dp"
+                                    android:paddingBottom="10dp"
+                                    app:srcCompat="@drawable/doctor" />
+
+                                <TextView
+                                    android:id="@+id/textView374"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/andika"
+                                    android:text="Konsultasi Online"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/layoutReport"
+                                android:layout_width="match_parent"
+                                android:layout_height="150dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/layout_bg"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/imageView285"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="120dp"
+                                    android:paddingTop="10dp"
+                                    android:paddingBottom="10dp"
+                                    app:srcCompat="@drawable/report" />
+
+                                <TextView
+                                    android:id="@+id/textView385"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/andika"
+                                    android:text="Laporan"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="150dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/layout_bg"
+                                android:orientation="vertical"
+                                android:visibility="invisible">
+
+                                <ImageView
+                                    android:id="@+id/imageView276"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="120dp"
+                                    app:srcCompat="@drawable/free_hospital_waiting_room_illustration_svg" />
+
+                                <TextView
+                                    android:id="@+id/textView376"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/andika"
+                                    android:text="TextView"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

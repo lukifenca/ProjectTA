@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/mainLayout"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#FFFFFF"
+android:divider="@drawable/corner_top_noborder"
+android:gravity="right"
+android:orientation="vertical"
+tools:context=".activityAdmin.MasterSubsActivity">
+
+<LinearLayout
+    android:id="@+id/linearLayout4"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#97F2F1"
+    android:orientation="horizontal"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <ImageView
+        android:id="@+id/imgbackprofilepasien"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="2dp"
+        android:layout_weight="0"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24"
+        app:tint="#000000" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_weight="1"
+        android:text="Master Subscribtion"
+        android:textColor="#000000"
+        android:textSize="22sp" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="48dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0"
+        app:srcCompat="@drawable/ictestlogo" />
+</LinearLayout>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/constraintLayoutprofilepasien"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginBottom="20dp"
+    android:background="@drawable/bgkonten"
+    android:elevation="25dp"
+    android:fadingEdgeLength="10dp"
+    android:paddingBottom="10dp"
+    app:layout_constraintCircleRadius="100dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txttitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="Daftar Paket"
+                android:textAlignment="gravity"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtAddAdmin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/andika"
+                    android:gravity="center"
+                    android:text="Tambah Paket Baru"
+                    android:textAlignment="viewEnd" />
+
+                <ImageView
+                    android:id="@+id/imgAddAdmin"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="end"
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/add" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutAddData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/etNamaPaket"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+                    android:ems="10"
+                    android:fontFamily="@font/andika"
+                    android:hint="Nama Paket"
+                    android:inputType="text" />
+
+                <EditText
+                    android:id="@+id/etHargaPaket"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+                    android:ems="10"
+                    android:fontFamily="@font/andika"
+                    android:hint="Harga Paket (20000)"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/etDurasi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+                    android:ems="10"
+                    android:fontFamily="@font/andika"
+                    android:hint="Durasi Paket (30 Hari)"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/etDeteksi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+                    android:ems="10"
+                    android:fontFamily="@font/andika"
+                    android:hint="Jumlah Deteksi (5 Kali)"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/etVocerDiskon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+                    android:ems="10"
+                    android:fontFamily="@font/andika"
+                    android:hint="Jumlah Voucher Konsultasi (5 Voucher)"
+                    android:inputType="number" />
+
+
+                <EditText
+                    android:id="@+id/etNominalVocer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+                    android:ems="10"
+                    android:fontFamily="@font/andika"
+                    android:hint="Nominal Voucher (5000)"
+                    android:inputType="number" />
+
+                <Button
+                    android:id="@+id/btnAddDisease2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/andika"
+                    android:text="Tambah"
+                    android:textColor="#000000"
+                    app:cornerRadius="50dp" />
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/rv_historysaldo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/layout_bg"
+                android:backgroundTintMode="multiply"
+                android:divider="@drawable/bgkonten"
+                android:dividerHeight="10.0sp"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                tools:listitem="@layout/itemlistsubs" />
+
+            <TextView
+                android:id="@+id/txtnohistory"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Tidak ada Dokter yang bertugas saat ini."
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
